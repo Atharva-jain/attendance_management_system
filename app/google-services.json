@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "786604802059",
+    "project_id": "attentance-app",
+    "storage_bucket": "attentance-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786604802059:android:3ae172f906b1f524f6c70e",
+        "android_client_info": {
+          "package_name": "com.yeloe.attentanceapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMKkEToWMH81vGI2jOfU1IiCxIxiF-h-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
