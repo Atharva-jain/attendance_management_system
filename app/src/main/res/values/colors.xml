@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
+    <color name="green">#00FF00</color>
 
     <color name="seed">#003060</color>
     <color name="md_theme_light_primary">#235FA6</color>
@@ -65,6 +65,10 @@
     <color name="md_theme_dark_surfaceTint">#A7C8FF</color>
     <color name="md_theme_dark_outlineVariant">#43474E</color>
     <color name="md_theme_dark_scrim">#000000</color>
+
+    <color name="transparent_light_blue_color">#40235FA6</color>
+    <color name="transparent_dark_blue_color">#50003060</color>
+
 
 
 

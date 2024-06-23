@@ -1,3 +1,138 @@
 <resources>
-    <string name="app_name">Attentance App</string>
+    <string name="app_name">Face Mark</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_to_stafe">Welcome to Face Mark</string>
+    <string name="seamless_attendance_tracking_for_every_role_every_time">Seamless Attendance Tracking for Every Role, Every Time.</string>
+    <string name="click_to_teacher_login">Click to Teacher Login</string>
+    <string name="click_to_student_login">Click to Student Login</string>
+    <string name="gmail">Gmail</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="forgot_password">forgot password?</string>
+    <string name="don_t_have_an_account">Don\'t have an account? </string>
+    <string name="sign_up">Sign Up</string>
+    <string name="create_account">Create Account</string>
+    <string name="signup_to_get_started">Signup to get started</string>
+    <string name="back">Back</string>
+    <string name="re_enter_password">Re-enter password</string>
+    <string name="already_have_an_account">Already have an account? </string>
+    <string name="enter_your_registered_gmail">Enter your registered gmail</string>
+    <string name="forgot_password_f">Forgot Password</string>
+    <string name="submit">Submit</string>
+    <string name="elevate_your_profile_fuel_your_success_let_s_shape_your_academic_journey_together">Elevate your profile, fuel your success. Let\'s shape your academic journey together.</string>
+    <string name="give_your_academic_details">Give Your Academic Details</string>
+    <string name="enter_email_address_to_get_link">Enter email address to get link</string>
+    <string name="name">Name</string>
+    <string name="college">College</string>
+    <string name="branch">Branch</string>
+    <string name="year">Year</string>
+    <string name="semester">Semester</string>
+    <string name="scan_your_face">Scan your face</string>
+    <string name="add_profile_image">Add Profile Image</string>
+    <string name="try_again">Try again</string>
+    <string name="select">Selected</string>
+    <string name="upload">Upload</string>
+    <string name="teacher_classroom">Teacher Classroom</string>
+    <string name="add">ADD</string>
+    <string name="create_class">Create class</string>
+    <string name="classroom_name">Classroom name</string>
+    <string name="which_college_student_are_you_going_to_take_a_class_with">Which college student are you going to take a class with?</string>
+    <string name="which_college_student_will_you_take_a_class_with">Which college student will you take a class with?</string>
+    <string name="preferred_branch_for_branch_enrollment">Preferred branch for branch enrollment?</string>
+    <string name="preferred_enrollment_year">Preferred enrollment year?</string>
+    <string name="preferred_semester_for_enrollment">Preferred semester for enrollment?</string>
+    <string name="unfortunately_there_are_no_available_classrooms_please_consider_adding_one">Unfortunately, there are no available classrooms. Please consider adding one.</string>
+    <string name="classes">Class</string>
+    <string name="student">Student</string>
+    <string name="conduct_class">Conduct Class</string>
+    <string name="live_classes">Live Classes</string>
+    <string name="previous_class">Previous Class</string>
+    <string name="class_joining_code">Class joining code</string>
+    <string name="add_your_current_location">Add your current location</string>
+    <string name="disable_attendance_recording">Disable Attendance Recording</string>
+    <string name="cancel_class">Cancel Class</string>
+    <string name="no_previous_classes_available">No previous classes available</string>
+    <string name="no_live_classes_available">No live classes available</string>
+    <string name="no_students_have_joined_your_classroom">No students have joined your classroom.</string>
+    <string name="student_classroom">Student classroom</string>
+    <string name="join_class">Join class</string>
+    <string name="you_haven_t_joined_any_classrooms">You haven\'t joined any classrooms.</string>
+    <string name="search_by_classroom_title">Search by Classroom Title</string>
+    <string name="join">Join</string>
+    <string name="no_available_classrooms_to_join_you_can_search_for_classrooms_to_join">No available classrooms to join. You can search for classrooms to join.</string>
+    <string name="mark_attendance">Mark Attendance</string>
+    <string name="google_maps_key" templateMergeStratery="preserve" translatable="false">AIzaSyB0Y0ZnsmoVvqJFhsZgVWFAWLN4bXSN6k0</string>
+
+
+    <string-array name="colleges">
+        <item>Yeshwantrao Chavan College Of Engineering(YCC), Nagpur</item>
+    </string-array>
+
+    <string-array name="branches">
+        <item>Information Technology</item>
+        <item>Computer Science</item>
+        <item>Computer Technology</item>
+        <item>Data Science</item>
+        <item>Artificial Intelligence</item>
+        <item>Civil Engineering</item>
+        <item>Mechanical Engineering</item>
+        <item>Electrical Engineering</item>
+        <item>Chemical Engineering</item>
+        <item>Computer Engineering</item>
+        <item>Aerospace Engineering</item>
+        <item>Biomedical Engineering</item>
+        <item>Environmental Engineering</item>
+        <item>Industrial Engineering</item>
+        <item>Materials Engineering</item>
+        <item>Nuclear Engineering</item>
+        <item>Petroleum Engineering</item>
+        <item>Software Engineering</item>
+        <item>Robotics Engineering</item>
+        <item>Biotechnology Engineering</item>
+        <item>Agricultural Engineering</item>
+        <item>Marine Engineering</item>
+        <item>Geological Engineering</item>
+        <item>Architectural Engineering</item>
+        <item>Systems Engineering</item>
+    </string-array>
+
+    <string-array name="years">
+        <item>1st Year</item>
+        <item>2nd Year</item>
+        <item>3rd Year</item>
+        <item>4th year</item>
+    </string-array>
+
+
+    <string-array name="semesters">
+        <item>1st sem</item>
+        <item>2nd sem</item>
+        <item>3rd sem</item>
+        <item>4th sem</item>
+        <item>5th sem</item>
+        <item>6th sem</item>
+        <item>7th sem</item>
+        <item>8th sem</item>
+    </string-array>
+    <string name="title_activity_attendance_maps">AttendanceMapsActivity</string>
+    <string name="verify_your_face">Verify your face</string>
+    <string name="enter_verification_code">Enter verification code</string>
+    <string name="marked">Marked</string>
+    <string name="verify_update_your_location">Verify/Update Your Location</string>
+    <string name="mark_absent">Mark Absent</string>
+    <string name="marked_present">Mark Present</string>
+    <string name="no_absentee_recorded">No Absentee Recorded</string>
+    <string name="no_present_recorded">No Present Recorded</string>
+    <string name="attendance">Attendance</string>
+    <string name="view_details">view details</string>
+    <string name="show_present">Show Present</string>
+    <string name="show_absent">Show Absent</string>
+    <string name="absent">Absent</string>
+    <string name="present">Present</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="log_out">Sign out</string>
+    <string name="update">Update</string>
+    <string name="remove_student">Remove Student</string>
+    <string name="warning_multiple_faces_detected">Warning: Multiple faces detected.</string>
 </resources>

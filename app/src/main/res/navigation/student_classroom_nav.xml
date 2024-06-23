@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/student_classroom_nav"
+    app:startDestination="@id/studentHomeClassroomFragment">
+
+    <fragment
+        android:id="@+id/studentHomeClassroomFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.student.classroom.StudentHomeClassroomFragment"
+        android:label="fragment_student_home_classroom"
+        tools:layout="@layout/fragment_student_home_classroom" >
+        <action
+            android:id="@+id/action_studentHomeClassroomFragment_to_studentJoinClassroomFragment"
+            app:destination="@id/studentJoinClassroomFragment" />
+        <action
+            android:id="@+id/action_studentHomeClassroomFragment_to_studentAttendanceClassFragment"
+            app:destination="@id/studentAttendanceClassFragment" />
+        <action
+            android:id="@+id/action_studentHomeClassroomFragment_to_studentProfileFragment"
+            app:destination="@id/studentProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentJoinClassroomFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.student.classroom.StudentJoinClassroomFragment"
+        android:label="fragment_student_join_classroom"
+        tools:layout="@layout/fragment_student_join_classroom" />
+    <fragment
+        android:id="@+id/studentAttendanceClassFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.student.classes.StudentAttendanceClassFragment"
+        android:label="fragment_student_attendance_class"
+        tools:layout="@layout/fragment_student_attendance_class" >
+        <action
+            android:id="@+id/action_studentAttendanceClassFragment_to_viewAttendanceDetailsDialogFragment"
+            app:destination="@id/viewAttendanceDetailsDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/viewAttendanceDetailsDialogFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.student.classes.ViewAttendanceDetailsDialogFragment"
+        android:label="fragment_view_attendance_details_dialog"
+        tools:layout="@layout/fragment_view_attendance_details_dialog" >
+        <action
+            android:id="@+id/action_viewAttendanceDetailsDialogFragment_to_showAttendanceFragment"
+            app:destination="@id/showAttendanceFragment" />
+        <action
+            android:id="@+id/action_viewAttendanceDetailsDialogFragment_to_showAbsentFragment"
+            app:destination="@id/showAbsentFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/showAttendanceFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.student.classes.ShowAttendanceFragment"
+        android:label="fragment_show_attendance"
+        tools:layout="@layout/fragment_show_attendance" />
+    <fragment
+        android:id="@+id/showAbsentFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.student.classes.ShowAbsentFragment"
+        android:label="fragment_show_absent"
+        tools:layout="@layout/fragment_show_absent" />
+    <fragment
+        android:id="@+id/studentProfileFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.student.profile.StudentProfileFragment"
+        android:label="fragment_student_profile"
+        tools:layout="@layout/fragment_student_profile" >
+        <action
+            android:id="@+id/action_studentProfileFragment_to_studentEditProfileFragment"
+            app:destination="@id/studentEditProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentEditProfileFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.student.profile.StudentEditProfileFragment"
+        android:label="fragment_student_edit_profile"
+        tools:layout="@layout/fragment_student_edit_profile" />
+</navigation>

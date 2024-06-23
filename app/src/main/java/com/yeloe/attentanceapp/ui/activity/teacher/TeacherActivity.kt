@@ -1,0 +1,204 @@
+package com.yeloe.attentanceapp.ui.activity.teacher
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import android.view.View
+import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
+
+import com.yeloe.attentanceapp.R
+import com.yeloe.attentanceapp.databinding.ActivityTeacherBinding
+import com.yeloe.attentanceapp.model.authentication.SignIn
+import com.yeloe.attentanceapp.repo.AttendanceRepository
+import com.yeloe.attentanceapp.utils.Constant
+import com.yeloe.attentanceapp.utils.GetUid
+import com.yeloe.attentanceapp.utils.Resources
+import com.yeloe.attentanceapp.utils.ShowToast
+import com.yeloe.attentanceapp.view_model.AttendanceViewModel
+import com.yeloe.attentanceapp.view_model.factory.AttendanceViewModelFactory
+
+class TeacherActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityTeacherBinding
+    lateinit var mAttendanceViewModel: AttendanceViewModel
+    var mSignInDetails: SignIn = SignIn()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityTeacherBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+        val repository = AttendanceRepository()
+        val viewModelProviderFactory = AttendanceViewModelFactory(application, repository)
+        mAttendanceViewModel = ViewModelProvider(
+            this, viewModelProviderFactory
+        )[AttendanceViewModel::class.java]
+
+        val uid = GetUid.getUid()
+        if (uid != null) mAttendanceViewModel.getTeacherUserData(uid)
+
+        mAttendanceViewModel.mGetCurrentUserState.observe(this) { response ->
+            when (response) {
+                is Resources.Success -> {
+
+                    val data = response.data
+                    Log.d(Constant.CREATE_ACCOUNT_LOG, "\n $data")
+                    if (data != null) {
+                        Glide.with(this).load(data.profileImage).into(binding.profileImageTopAppBar)
+                        mSignInDetails = data
+                        mAttendanceViewModel.mStateOfGettingCurrentData.postValue(true)
+                    } else {
+                        setTeacherProgressBarVisibility(false)
+                        mAttendanceViewModel.mStateOfGettingCurrentData.postValue(false)
+                    }
+                }
+
+                is Resources.Error -> {
+                    response.message.let { message ->
+                        Log.d(Constant.TEACHER_LOG, "Error $message")
+                    }
+                    setTeacherProgressBarVisibility(false)
+                    mAttendanceViewModel.mStateOfGettingCurrentData.postValue(false)
+                }
+
+                is Resources.Loading -> {
+                    setTeacherProgressBarVisibility(true)
+                    mAttendanceViewModel.mStateOfGettingCurrentData.postValue(false)
+                }
+
+                else -> {
+                    mAttendanceViewModel.mGetCurrentUserState.postValue(
+                        Resources.Completed()
+                    )
+                }
+            }
+        }
+
+    }
+
+    fun setProfileImage(image: String) {
+        Glide.with(this).load(image).into(binding.profileImageTopAppBar)
+    }
+
+    private fun setTeacherProgressBarVisibility(value: Boolean) {
+        if (value) {
+            binding.teacherLinearProgressIndicator.visibility = View.VISIBLE
+        } else {
+            binding.teacherLinearProgressIndicator.visibility = View.GONE
+        }
+    }
+
+    fun changeAppBarAccordingNavigation(navType: String) {
+        when (navType) {
+
+            Constant.TEACHER_CLASSROOM_HOME -> {
+                binding.closeTopAppBar.visibility = View.GONE
+                binding.taskButtonTopAppBar.visibility = View.GONE
+                binding.editTaskTopAppBar.visibility = View.GONE
+                binding.deleteTaskTopAppBar.visibility = View.GONE
+                binding.profileLayoutTopAppBar.visibility = View.VISIBLE
+                binding.titleTopAppBar.text = navType
+            }
+
+            Constant.TEACHER_CLASSROOM_CREATE -> {
+                binding.closeTopAppBar.visibility = View.VISIBLE
+                binding.taskButtonTopAppBar.visibility = View.VISIBLE
+                binding.profileLayoutTopAppBar.visibility = View.GONE
+                binding.titleTopAppBar.text = navType
+                binding.editTaskTopAppBar.visibility = View.GONE
+                binding.deleteTaskTopAppBar.visibility = View.GONE
+                binding.taskButtonTextAppBar.text = Constant.ADD
+                binding.closeTopAppBar.setImageResource(R.drawable.close)
+            }
+
+            Constant.TEACHER_CLASS -> {
+                binding.closeTopAppBar.visibility = View.VISIBLE
+                binding.closeTopAppBar.setImageResource(R.drawable.back)
+                binding.titleTopAppBar.text =
+                    mAttendanceViewModel.getCreateClassroomData.classroomName
+                binding.editTaskTopAppBar.visibility = View.VISIBLE
+                binding.deleteTaskTopAppBar.visibility = View.VISIBLE
+                binding.taskButtonTopAppBar.visibility = View.GONE
+                binding.profileLayoutTopAppBar.visibility = View.GONE
+            }
+
+            Constant.TEACHER_CREATE_CLASS -> {
+                binding.closeTopAppBar.visibility = View.VISIBLE
+                binding.closeTopAppBar.setImageResource(R.drawable.close)
+                binding.taskButtonTopAppBar.visibility = View.VISIBLE
+                binding.profileLayoutTopAppBar.visibility = View.GONE
+                binding.editTaskTopAppBar.visibility = View.GONE
+                binding.deleteTaskTopAppBar.visibility = View.GONE
+                binding.titleTopAppBar.text = navType
+                binding.taskButtonTextAppBar.text = Constant.CREATE
+
+            }
+
+            Constant.TEACHER_CLASSROOM_UPDATE -> {
+                binding.closeTopAppBar.visibility = View.VISIBLE
+                binding.taskButtonTopAppBar.visibility = View.VISIBLE
+                binding.profileLayoutTopAppBar.visibility = View.GONE
+                binding.titleTopAppBar.text = navType
+                binding.editTaskTopAppBar.visibility = View.GONE
+                binding.deleteTaskTopAppBar.visibility = View.GONE
+                binding.taskButtonTextAppBar.text = Constant.UPDATE
+                binding.closeTopAppBar.setImageResource(R.drawable.close)
+            }
+
+            Constant.TEACHER_ATTENDANCE_MARKED -> {
+                binding.closeTopAppBar.visibility = View.VISIBLE
+                binding.closeTopAppBar.setImageResource(R.drawable.back)
+                binding.taskButtonTopAppBar.visibility = View.GONE
+                binding.profileLayoutTopAppBar.visibility = View.GONE
+                binding.titleTopAppBar.text = navType
+                binding.editTaskTopAppBar.visibility = View.GONE
+                binding.deleteTaskTopAppBar.visibility = View.GONE
+            }
+
+            Constant.TEACHER_ATTENDANCE_ABSENT -> {
+                binding.closeTopAppBar.visibility = View.VISIBLE
+                binding.closeTopAppBar.setImageResource(R.drawable.back)
+                binding.taskButtonTopAppBar.visibility = View.GONE
+                binding.profileLayoutTopAppBar.visibility = View.GONE
+                binding.titleTopAppBar.text = navType
+                binding.editTaskTopAppBar.visibility = View.GONE
+                binding.deleteTaskTopAppBar.visibility = View.GONE
+            }
+
+            Constant.TEACHER_PROFILE -> {
+                binding.closeTopAppBar.visibility = View.VISIBLE
+                binding.closeTopAppBar.setImageResource(R.drawable.back)
+                binding.taskButtonTopAppBar.visibility = View.GONE
+                binding.profileLayoutTopAppBar.visibility = View.GONE
+                binding.titleTopAppBar.text = navType
+                binding.editTaskTopAppBar.visibility = View.GONE
+                binding.deleteTaskTopAppBar.visibility = View.GONE
+            }
+
+            Constant.TEACHER_EDIT_PROFILE -> {
+                binding.closeTopAppBar.visibility = View.VISIBLE
+                binding.closeTopAppBar.setImageResource(R.drawable.back)
+                binding.taskButtonTopAppBar.visibility = View.GONE
+                binding.profileLayoutTopAppBar.visibility = View.GONE
+                binding.titleTopAppBar.text = navType
+                binding.editTaskTopAppBar.visibility = View.GONE
+                binding.deleteTaskTopAppBar.visibility = View.GONE
+            }
+
+            else -> {
+                binding.closeTopAppBar.visibility = View.GONE
+                binding.taskButtonTopAppBar.visibility = View.GONE
+                binding.editTaskTopAppBar.visibility = View.GONE
+                binding.deleteTaskTopAppBar.visibility = View.GONE
+                binding.profileLayoutTopAppBar.visibility = View.VISIBLE
+                binding.titleTopAppBar.text = navType
+            }
+
+        }
+
+    }
+
+
+}

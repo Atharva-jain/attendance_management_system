@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/teacher_classroom_nav"
+    app:startDestination="@id/classroomHomeFragment">
+
+    <fragment
+        android:id="@+id/classroomHomeFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.teacher.classroom.ClassroomHomeFragment"
+        android:label="fragment_classroom_home"
+        tools:layout="@layout/fragment_classroom_home" >
+        <action
+            android:id="@+id/action_classroomHomeFragment_to_createClassroomFragment"
+            app:destination="@id/createClassroomFragment" />
+        <action
+            android:id="@+id/action_classroomHomeFragment_to_classHomeFragment"
+            app:destination="@id/classHomeFragment" />
+        <action
+            android:id="@+id/action_classroomHomeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createClassroomFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.teacher.classroom.CreateClassroomFragment"
+        android:label="fragment_create_classroom"
+        tools:layout="@layout/fragment_create_classroom" >
+        <action
+            android:id="@+id/action_createClassroomFragment_to_classroomHomeFragment"
+            app:destination="@id/classroomHomeFragment" />
+        <argument
+            android:name="signInDetails"
+            app:argType="com.yeloe.attentanceapp.model.authentication.SignIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/classHomeFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.teacher.classes.ClassHomeFragment"
+        android:label="fragment_class_home"
+        tools:layout="@layout/fragment_class_home" >
+        <action
+            android:id="@+id/action_classHomeFragment_to_createClassFragment"
+            app:destination="@id/createClassFragment" />
+        <action
+            android:id="@+id/action_classHomeFragment_to_markedAbsentFragment"
+            app:destination="@id/markedAbsentFragment" />
+        <action
+            android:id="@+id/action_classHomeFragment_to_markedAttendanceFragment"
+            app:destination="@id/markedAttendanceFragment" />
+        <action
+            android:id="@+id/action_classHomeFragment_to_createClassroomFragment"
+            app:destination="@id/createClassroomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createClassFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.teacher.classes.CreateClassFragment"
+        android:label="fragment_create_class"
+        tools:layout="@layout/fragment_create_class" >
+        <argument android:name="classroom" />
+    </fragment>
+    <fragment
+        android:id="@+id/markedAbsentFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.teacher.classes.attendance.MarkedAbsentFragment"
+        android:label="fragment_marked_absent"
+        tools:layout="@layout/fragment_marked_absent" />
+    <fragment
+        android:id="@+id/markedAttendanceFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.teacher.classes.attendance.MarkedAttendanceFragment"
+        android:label="fragment_marked_attendance"
+        tools:layout="@layout/fragment_marked_attendance" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.teacher.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_editTeacherProfileFragment"
+            app:destination="@id/editTeacherProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTeacherProfileFragment"
+        android:name="com.yeloe.attentanceapp.ui.fragment.teacher.profile.EditTeacherProfileFragment"
+        android:label="fragment_edit_teacher_profile"
+        tools:layout="@layout/fragment_edit_teacher_profile" />
+</navigation>
