@@ -237,7 +237,7 @@
                     android:fontFamily="@font/nunito"
                     android:hint="@string/name"
                     android:inputType="text"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -260,7 +260,7 @@
                     android:fontFamily="@font/nunito"
                     android:hint="@string/college"
                     android:inputType="text"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     app:simpleItems="@array/colleges" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -284,7 +284,7 @@
                     android:fontFamily="@font/nunito"
                     android:hint="@string/branch"
                     android:inputType="text"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     app:simpleItems="@array/branches" />
 
 
@@ -309,7 +309,7 @@
                     android:fontFamily="@font/nunito"
                     android:hint="@string/year"
                     android:inputType="text"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     app:simpleItems="@array/years" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -333,7 +333,7 @@
                     android:fontFamily="@font/nunito"
                     android:hint="@string/semester"
                     android:inputType="text"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     app:simpleItems="@array/semesters" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -343,9 +343,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_12sdp"
                 android:fontFamily="@font/nunito_bold"
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/_8sdp"
                 android:text="@string/submit"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 

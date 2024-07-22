@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.yeloe.attentanceapp.MainActivity
 import com.yeloe.attentanceapp.R
@@ -22,6 +23,7 @@ import com.yeloe.attentanceapp.ui.activity.teacher.TeacherActivity
 import com.yeloe.attentanceapp.utils.CheckInternetConnection
 import com.yeloe.attentanceapp.utils.Constant
 import com.yeloe.attentanceapp.utils.Resources
+import com.yeloe.attentanceapp.utils.isDarkModeOn
 
 class LoginFragment : Fragment() {
 
@@ -47,6 +49,12 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if (isDarkModeOn(requireContext())) {
+            Glide.with(this).load(R.drawable.login_dark).into(binding.logoImageView)
+        } else {
+            Glide.with(this).load(R.drawable.login_dark).into(binding.logoImageView)
+        }
 
         // Receive the arguments in a variable
         val type = args.type

@@ -7,28 +7,17 @@
     tools:context=".ui.fragment.authentication.ChooseOptionLoginFragment">
 
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView"
+    <ImageView
+        android:id="@+id/logoImageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_50sdp"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_marginStart="@dimen/_24sdp"
         android:layout_marginTop="@dimen/_30sdp"
-        android:layout_marginEnd="@dimen/_50sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_180sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/logo"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/nameTextView"
@@ -41,7 +30,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
 
     <TextView
@@ -51,37 +40,106 @@
         android:layout_margin="@dimen/_12sdp"
         android:fontFamily="@font/nunito"
         android:gravity="center"
-        android:text="@string/seamless_attendance_tracking_for_every_role_every_time"
+        android:text="@string/please_select_your_login_option"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
 
-    <Button
-        android:id="@+id/teacherLoginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/click_to_teacher_login"
-        android:fontFamily="@font/nunito_bold"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/studentLoginButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="@dimen/_12sdp"
-        android:padding="@dimen/_12sdp"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/studentLoginButton"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/teacherLoginCardView"
+        style="?attr/materialCardViewFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/click_to_student_login"
+        android:layout_margin="@dimen/_12sdp"
+
+        android:backgroundTint="?colorOnPrimaryFixedVariant"
+        app:layout_constraintBottom_toTopOf="@+id/studentLoginCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:src="@drawable/teacher"
+                android:scaleType="fitXY"
+                android:layout_margin="@dimen/_8sdp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/_8sdp"
+                android:gravity="center"
+                android:textColor="?colorPrimaryFixed"
+                android:textSize="18sp"
+                android:fontFamily="@font/nunito_bold"
+                android:layout_gravity="center"
+                android:text="Continue with teacher"/>
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/studentLoginCardView"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_12sdp"
+        android:backgroundTint="?colorOnPrimaryFixed"
+        app:layout_constraintBottom_toTopOf="@+id/descTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:src="@drawable/student"
+                android:scaleType="fitXY"
+                android:layout_margin="@dimen/_8sdp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/_8sdp"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="?colorPrimaryFixed"
+                android:fontFamily="@font/nunito_bold"
+                android:layout_gravity="center"
+                android:text="@string/continue_with_student"/>
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/descTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_bold"
-        android:textSize="16sp"
-        android:padding="@dimen/_12sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginBottom="@dimen/_40sdp"
+        android:text="@string/choose_the_option_that_best_fits_your_role_to_access_your_account"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_margin="@dimen/_12sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

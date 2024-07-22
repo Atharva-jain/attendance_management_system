@@ -18,6 +18,7 @@ data class Class(
     val teacherEmail: String = "",
     @ServerTimestamp
     var timeStamp: Date = Date(),
+    val className: String = "",
     val classCode: String = "",
     val location: Location = Location(),
     val allowAttendance: Boolean = true

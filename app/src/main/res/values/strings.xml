@@ -2,7 +2,7 @@
     <string name="app_name">Face Mark</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="welcome_to_stafe">Welcome to Face Mark</string>
+    <string name="welcome_to_stafe">Welcome to attendo</string>
     <string name="seamless_attendance_tracking_for_every_role_every_time">Seamless Attendance Tracking for Every Role, Every Time.</string>
     <string name="click_to_teacher_login">Click to Teacher Login</string>
     <string name="click_to_student_login">Click to Student Login</string>
@@ -135,4 +135,11 @@
     <string name="update">Update</string>
     <string name="remove_student">Remove Student</string>
     <string name="warning_multiple_faces_detected">Warning: Multiple faces detected.</string>
+    <string name="please_select_your_login_option">Please select your login option</string>
+    <string name="choose_the_option_that_best_fits_your_role_to_access_your_account">Choose the option that best fits your role to access your account.</string>
+    <string name="continue_with_student">Continue with student</string>
+    <string name="hey_login_now">Hey\nLogin Now</string>
+    <string name="please_enter_your_email_address_to_receive_a_link_for_resetting_your_password">Please enter your email address to receive a link for resetting your password.</string>
+    <string name="sign_up_to_begin_your_journey_with_us">Sign up to begin your journey with us!</string>
+    <string name="class_name">Class Name</string>
 </resources>

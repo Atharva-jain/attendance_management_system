@@ -7,12 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Lifecycle
+import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.yeloe.attentanceapp.MainActivity
+import com.yeloe.attentanceapp.R
 import com.yeloe.attentanceapp.databinding.FragmentForgotPasswordDialogBinding
 import com.yeloe.attentanceapp.utils.CheckInternetConnection
 import com.yeloe.attentanceapp.utils.Constant
 import com.yeloe.attentanceapp.utils.Resources
+import com.yeloe.attentanceapp.utils.isDarkModeOn
 import java.lang.Exception
 
 
@@ -32,6 +35,12 @@ class ForgotPasswordDialogFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if (isDarkModeOn(requireContext())) {
+            Glide.with(this).load(R.drawable.forgot_password_dark).into(binding.imageView)
+        } else {
+            Glide.with(this).load(R.drawable.forgot_password_light).into(binding.imageView)
+        }
 
         (activity as MainActivity).mAttendanceViewModel.mForgotPasswordState.observe(
             viewLifecycleOwner

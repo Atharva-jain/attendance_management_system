@@ -23,8 +23,8 @@ class LiveClassesAdapter(
     inner class LiveClassHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val disableAttendanceButtonCardView: MaterialCardView =
             itemView.findViewById(R.id.disableAttendanceButtonCardView)
-        val liveClassDateTextView: TextView = itemView.findViewById(R.id.liveClassDateTextView)
-        val liveClassTimeTextView: TextView = itemView.findViewById(R.id.liveClassTimeTextView)
+        val classNameLiveClassTextView: TextView =
+            itemView.findViewById(R.id.classNameLiveClassTextView)
         val classCodeLiveClassTextView: TextView =
             itemView.findViewById(R.id.classCodeLiveClassTextView)
         val locationLiveClassTextView: TextView =
@@ -50,9 +50,7 @@ class LiveClassesAdapter(
         }
         val date = GetDateAndTime.getCurrentDate(model.timeStamp)
         val time = GetDateAndTime.getCurrentDate(model.timeStamp)
-
-        holder.liveClassDateTextView.text = date
-        holder.liveClassTimeTextView.text = time
+        holder.classNameLiveClassTextView.text = "${model.className} $date $time"
         holder.locationLiveClassTextView.text = "Location: ${model.location.address}"
         holder.classCodeLiveClassTextView.text = "Class Code ${model.classCode}"
 

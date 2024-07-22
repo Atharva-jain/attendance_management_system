@@ -37,6 +37,18 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_160sdp"
+        android:contentDescription="@string/app_name"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backLayout" />
+
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/signUpLinearProgressIndicator"
         android:layout_width="match_parent"
@@ -56,13 +68,13 @@
         android:layout_marginEnd="@dimen/_12sdp"
         android:layout_marginStart="@dimen/_12sdp"
         android:fontFamily="@font/nunito_bold"
-        android:gravity="start"
+        android:gravity="center"
         android:text="@string/create_account"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
     <TextView
         android:id="@+id/contextTextView"
@@ -70,9 +82,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_12sdp"
         android:fontFamily="@font/nunito"
-        android:gravity="start"
-        android:text="@string/signup_to_get_started"
-        android:textSize="18sp"
+        android:gravity="center"
+        android:text="@string/sign_up_to_begin_your_journey_with_us"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
@@ -85,7 +97,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_44sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contextTextView">
 
@@ -94,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:inputType="textEmailAddress"
             android:hint="@string/gmail"/>
 
@@ -116,7 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:inputType="textPassword"
             android:hint="@string/password"/>
 
@@ -137,7 +149,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:inputType="textPassword"
             android:hint="@string/re_enter_password"/>
 
@@ -149,9 +161,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_12sdp"
         android:fontFamily="@font/nunito_bold"
-        android:padding="@dimen/_10sdp"
+        android:padding="@dimen/_8sdp"
         android:text="@string/sign_up"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rePasswordTextInputLayout" />
@@ -180,19 +192,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_14sdp"
                 android:layout_marginStart="@dimen/_16sdp"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:fontFamily="@font/nunito"
                 android:text="@string/already_have_an_account"/>
             <TextView
                 android:id="@+id/loginInClickTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:layout_marginBottom="@dimen/_16sdp"
-                android:textSize="18sp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_14sdp"
+                android:textSize="16sp"
                 android:textColor="?colorSecondary"
                 android:fontFamily="@font/nunito_bold"
                 android:layout_marginEnd="@dimen/_16sdp"

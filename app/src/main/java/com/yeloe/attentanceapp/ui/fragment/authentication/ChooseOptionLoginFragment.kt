@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.yeloe.attentanceapp.R
 import com.yeloe.attentanceapp.databinding.FragmentChooseOptionLoginBinding
 import com.yeloe.attentanceapp.databinding.FragmentLoginBinding
 import com.yeloe.attentanceapp.utils.Constant
+import com.yeloe.attentanceapp.utils.isDarkModeOn
 
 
 class ChooseOptionLoginFragment : Fragment() {
@@ -29,7 +31,14 @@ class ChooseOptionLoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.studentLoginButton.setOnClickListener {
+        if (isDarkModeOn(requireContext())) {
+            Glide.with(this).load(R.drawable.full_logo_dark).into(binding.logoImageView)
+        } else {
+            Glide.with(this).load(R.drawable.full_logo_light).into(binding.logoImageView)
+        }
+
+
+        binding.studentLoginCardView.setOnClickListener {
             try {
                 val action =
                     ChooseOptionLoginFragmentDirections.actionChooseOptionLoginFragmentToLoginFragment(
@@ -41,7 +50,7 @@ class ChooseOptionLoginFragment : Fragment() {
             }
         }
 
-        binding.teacherLoginButton.setOnClickListener {
+        binding.teacherLoginCardView.setOnClickListener {
             try {
                 val action =
                     ChooseOptionLoginFragmentDirections.actionChooseOptionLoginFragmentToLoginFragment(

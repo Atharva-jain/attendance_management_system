@@ -17,6 +17,7 @@ object Constant {
 
     // delays
     const val SEARCH_MOVIE_TIME_DELAY = 500L
+    const val SPLASH_SCREEN_DELAY = 2000L
     const val SHARED_PREFERENCES_DELAY = 2000
 
     // tabs values
