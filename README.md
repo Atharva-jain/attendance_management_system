@@ -54,16 +54,4 @@ To ensure accuracy, the app utilizes a unique 3-step protocol:
 *   **Time Efficiency:** Speeds up attendance taking, freeing up class time[cite: 2].
 *   **Real-Time Insights:** Provides instant tracking for teachers and awareness for students[cite: 2].
 
----
 
-## 👤 Project Leadership
-**Atharva Avinash Jain**[cite: 2]
-*Android App Developer | UI/UX Designer | Machine Learning Expert*[cite: 2]
-
-> "Attendo was born out of the need to simplify and secure the attendance process. We wanted to create a tool that not only saves time but also brings peace of mind to both teachers and students by ensuring accuracy and transparency."[cite: 2]
-
-**Get in touch:**
-*   **LinkedIn:** [atharva-avinash-jain](https://linkedin.com/in/atharva-avinash-jain/)[cite: 2]
-*   **Email:** support@atharvajain.in[cite: 2]
-*   **Portfolio:** [atharva-jain.github.io](https://github.com/atharva-jain)[cite: 2]
-*   **X (Twitter):** [@atharvajain01](https://twitter.com/atharvajain01)[cite: 2]
