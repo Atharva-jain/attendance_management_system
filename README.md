@@ -11,7 +11,7 @@ Attendo is a high-security attendance system that uses a 3-step verification pro
 
 | **User Login & Entry** | **Teacher Dashboard** | **Verification Process** |
 | :--- | :--- | :--- |
-| ![image alt]([sign up.png](https://github.com/Atharva-jain/attendance_management_system/blob/411ae7028d0a9864e900c3213a6bb074d2c45a86/sign%20up.png))  |![Classroom List](https://via.placeholder.com/200x400?text=Teacher+Dashboard) |![Verification](https://via.placeholder.com/200x400?text=Face+Scan+UI) |
+| ![image alt](https://github.com/Atharva-jain/attendance_management_system/blob/904d5facf50be59fe68cec7d50271efcec72c2fe/sign%20up.png)  |![Classroom List](https://via.placeholder.com/200x400?text=Teacher+Dashboard) |![Verification](https://via.placeholder.com/200x400?text=Face+Scan+UI) |
 | User-friendly role selection for Teachers and Students. | Comprehensive view of classrooms and live attendance stats. | Real-time map tracking and facial scanning interface. |
 
 ---
