@@ -1,8 +1,8 @@
 # 🎓 Attendo - AI-Based Attendance Management Android App[cite: 2]
 
-Imagine a world where taking attendance is seamless, secure, and smart[cite: 2]. Attendo transforms how classrooms operate by integrating cutting-edge deep learning technology for face recognition and location verification[cite: 2]. 
+Imagine a world where taking attendance is seamless, secure, and smart[cite: 2]. Attendo transforms how classrooms operate by integrating cutting-edge deep learning technology for face recognition and location verification. 
 
-Attendo is a high-security attendance system that uses a 3-step verification process—Location, Facial Recognition, and Class Codes—to eliminate attendance fraud and automate classroom management[cite: 2].
+Attendo is a high-security attendance system that uses a 3-step verification process—Location, Facial Recognition, and Class Codes—to eliminate attendance fraud and automate classroom management.
 
 ---
 
